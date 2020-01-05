@@ -3,29 +3,19 @@ using namespace std;
 #include <conio.h>
 #include<windows.h>
 #include<iomanip>
-//////////////////////////////////////////
-static int x=5, y=20;
-static char dir;
-/////////////////////////////////////////////////////////////////////////////////////////////
-//// function declaration///////////////////////////////////////////////////////////////////
-    char newline(int n,char ch){
+
+        char newline(int n,char ch){
         for(int i=0;i<n;i++){cout<<ch;}
         }
-    char newline2(int n,char ch){
-        for(int i=0;i<n;i++){cout<<ch;}
-        }
-/////////////////////////////////////////////////////////////////////////////////////////////
-////////main start//////////////////////////////////////////////////////////////////////////
 int main(){
+int x=5, y=20;
 
+char dir;
 
-cout << "Type Enter to quit\n";
-/////////////////////////////////////////////////
-//while loop start//////////////////////////////
 while( dir != 'q'){
     system("cls");
-        cout << "Your location at this moment: " << x << ", " << y;
-        cout << "\nPress direction key (l, r, t, d): "<<endl;
+        cout << "\nPress direction key (l, r, t, d)& press 'q' for exit "<<endl;
+        cout << "Your location at this moment: " << x << ", " << y<<endl;
         cout << "here is the hints for the trager(20*3/6,9*10/3)"<<endl;
         if((x==10 && y==30)){
         system("cls");
@@ -40,11 +30,8 @@ while( dir != 'q'){
         cout<<"end of boundry";
         break;
         }
-///////////////////////////////////////////////////////////////////////////////////
-//simple design///////////////////////////////////////////////////////////////////
-cout<<"__________________________________________________"<<endl;
-//design end//////////////////////////////////////////////////////////////////////
-                        newline(x,'\n');
+cout<<"__________________________________________________"<<endl;    newline(x,'\n');
+
 cout<< setw(y)<<"a"<<endl;
     dir = getche();
     if( dir=='l')y--;
@@ -52,9 +39,5 @@ cout<< setw(y)<<"a"<<endl;
     else if( dir=='t' )x--;
     else if( dir=='d' )x++;
             }
-//while loop end//////////////////////////////////////////
-/////////////////////////////////////////////////////////
     return 0;
 }
-///////////////main end///////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
