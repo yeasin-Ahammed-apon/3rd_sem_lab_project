@@ -14,6 +14,7 @@ char dir;
 
 while( dir != 'q'){
     system("cls");
+    system("COLOR 0A");
         cout << "\nPress direction key (l, r, t, d)& press 'q' for exit "<<endl;
         cout << "Your location at this moment: " << x << ", " << y<<endl;
         cout << "here is the hints for the trager(20*3/6,9*10/3)"<<endl;
@@ -21,23 +22,33 @@ while( dir != 'q'){
         system("cls");
             cout<<"you found the trager";
             break;
-        }else if(x<0||y<0){
-            system("cls");
-            cout<<"end of boundry";
-            break;
-        }else if(x>50|| y>50){
-        system("cls");;
+        }
+        else if(x>50|| y>50||x<0||y<0){
+        system("cls");
         cout<<"end of boundry";
         break;
         }
-cout<<"__________________________________________________"<<endl;    newline(x,'\n');
 
-cout<< setw(y)<<"a"<<endl;
+cout<<"__________________________________________________"<<endl;
+ newline(x,'\n');
+cout<< setw(y)<<"*"<<endl;
+if(x>=49||y>=49||x<=0||y<=0){
+        system("COLOR 0C");
+        cout<< "\n\n\n\nyou are near the boundry";
+        }
     dir = getche();
     if( dir=='l')y--;
     else if( dir=='r' )y++;
     else if( dir=='t' )x--;
     else if( dir=='d' )x++;
             }
+            cout<<"\nDo you like to play the game again press 'a'...if not press any key"<<endl;
+            dir = getche();
+            if(dir=='a'){
+                main();
+            }else{
+            exit(0);
+            }
+
     return 0;
 }
